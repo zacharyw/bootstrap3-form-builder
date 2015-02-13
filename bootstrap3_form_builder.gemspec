@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Bootstrap3FormBuilder::VERSION
   s.authors     = ["Zachary Wright"]
   s.email       = ["zacharygwright@gmail.com"]
-  s.homepage    = "TODO"
+  s.homepage    = "https://github.com/zacharyw/bootstrap3-form-builder"
   s.summary     = "Builds forms with Twitter Bootstrap 3 styling."
   s.description = "Custom form builder to create forms and inputs that work with Bootstrap 3. Also automatically sets pattern and required HTML5 attributes based on validators on domain objects."
   s.license     = "MIT"
