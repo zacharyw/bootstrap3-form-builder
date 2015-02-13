@@ -2,7 +2,7 @@
 
 *Supports Bootstrap 3* 
 
-This gem adds a helper to all of your views called bootstrap_form_for, which generates a form for a given model object
+This gem adds a helper to all of your views called `bootstrap_form_for`, which generates a form for a given model object
 and fields with HTML and CSS markup that works with the [Twitter bootstrap](http://getbootstrap.com/)  
 library.
 
@@ -43,7 +43,7 @@ class Person < ActiveRecord::Base
 end
 ```
 
-You can use the bootstrap_form_for helper method like so:
+You can use the `bootstrap_form_for` helper method like so:
 
 ```ruby
 <%= bootstrap_form_for(@user) do |f| %>
@@ -105,7 +105,7 @@ This will generate HTML like this:
 
 It automatically groups your inputs, creates labels, gives a button class to your submit button, and applies the given validations using the HTML pattern and required attributes.
 
-It also adds some options to all of the form helpers (form.text_field, form.text_area, etc)
+It also adds some options to all of the form helpers (`form.text_field`, `form.text_area`, etc)
 
 * :label - Lets you define a custom label
 * :label_class - Lets you define a custom class for your clabel
@@ -140,7 +140,11 @@ Would create:
 
 ##Configuration
 
-When you run the install generator it will create an initializer at config/initializers/bootstrap3_form_builder.rb
+When you run the install generator it will create an initializer at 
+
+```console
+config/initializers/bootstrap3_form_builder.rb
+```
 
 Here you can customize certain aspects of the form builder. Check the generated file for the most up to date documentation
 and example options.
