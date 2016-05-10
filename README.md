@@ -3,8 +3,7 @@
 *Supports Bootstrap 3* 
 
 This gem adds a helper to all of your views called `bootstrap_form_for`, which generates a form for a given model object
-and fields with HTML and CSS markup that works with the [Twitter bootstrap](http://getbootstrap.com/)  
-library.
+and fields with HTML and CSS markup that works with the [Twitter bootstrap](http://getbootstrap.com/) library.
 
 ## Install
 Add to your gemfile:
@@ -108,7 +107,7 @@ It automatically groups your inputs, creates labels, gives a button class to you
 It also adds some options to all of the form helpers (`form.text_field`, `form.text_area`, etc)
 
 * :label - Lets you define a custom label
-* :label_class - Lets you define a custom class for your clabel
+* :label_class - Lets you define a custom class for your label
 * :help_block - A block of text that should appear below your input
 * :help_inline - A line of text that should appear next to your input
 * :input_class - By Default this is 'form-control'
