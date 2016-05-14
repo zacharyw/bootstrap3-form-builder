@@ -8,7 +8,7 @@ module Bootstrap3FormBuilder
     end
 
 =begin
-Generates form fields that work with Twitter Bootstrap 3. 
+Generates form fields that work with Twitter Bootstrap 3.
 =end
     def self.create_tagged_field(method_name)
       define_method(method_name) do |label, *args|
@@ -75,7 +75,7 @@ Generates form fields that work with Twitter Bootstrap 3.
 
         format_validator = (validators.select { |v| v.class == ActiveModel::Validations::FormatValidator}).first
 
-        if format_validator && allow_pattern
+        if format_validator && allow_pattern && !method_name.include?('email')
           options[:pattern] = format_validator.options[:with].source.html_safe
           options[:title] = format_validator.options[:message] || "#{options[:title]} is not a valid format"
         end
@@ -101,13 +101,13 @@ Generates form fields that work with Twitter Bootstrap 3.
         end
 
         if !input_prefix.empty? || !input_suffix.empty?
-          input = @template.content_tag("div", 
-                    input_prefix.html_safe + 
-                    super(label, *(args << options)) + 
+          input = @template.content_tag("div",
+                    input_prefix.html_safe +
+                    super(label, *(args << options)) +
                     input_suffix.html_safe,
                     :class => "input-group " + (options[:input_container_class] || ""))
         else
-          input = super(label, *(args << options)) 
+          input = super(label, *(args << options))
 
           if options[:input_container_class]
             input = @template.content_tag("div", input.html_safe, :class => options[:input_container_class])
