@@ -75,7 +75,7 @@ Generates form fields that work with Twitter Bootstrap 3.
 
         format_validator = (validators.select { |v| v.class == ActiveModel::Validations::FormatValidator}).first
 
-        if format_validator && allow_pattern && !method_name.include?('email')
+        if format_validator && allow_pattern && !method_name.to_s.include?('email')
           options[:pattern] = format_validator.options[:with].source.html_safe
           options[:title] = format_validator.options[:message] || "#{options[:title]} is not a valid format"
         end
