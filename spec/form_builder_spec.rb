@@ -33,6 +33,14 @@ describe Bootstrap3FormBuilder::BootstrapFormHelper do
       end
     end
 
+    let(:invalid) do
+      invalid_record = Boostrap3FormBuilderSpecHelper::Record.new
+      invalid_record.errors.add(:presence, "cannot be nil")
+      bootstrap_form_for(invalid_record) do |builder|
+        return builder
+      end
+    end
+
     def render(partial, locals)
       "Form: "
     end
@@ -47,6 +55,11 @@ describe Bootstrap3FormBuilder::BootstrapFormHelper do
 
     it "should create required input for required attribute" do
       expect(subject.text_field('presence')).to include( "required=\"required\"")
+      expect(subject.text_field('presence')).not_to include("error")
+    end
+
+    it "should have error class if errors" do
+      expect(invalid.text_field('presence')).to include( "class=\"form-group error\"")
     end
 
     it "should ignore presence validators with conditions" do

@@ -141,7 +141,7 @@ Generates form fields that work with Twitter Bootstrap 3.
     end
 
     def control_group_class(label)
-      if @object.errors.messages[label]
+      unless @object.errors.messages[label].blank? && @object.errors.messages[label.to_sym].blank?
         return "form-group error"
       end
 
