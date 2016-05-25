@@ -26,6 +26,7 @@ module Boostrap3FormBuilderSpecHelper
 		include ActiveModel::Validations
 		include ActiveModel::Conversion
 		validates_presence_of :presence
+    validates_presence_of :presence_if, if: "true"
 		validates_inclusion_of :inclusion, in: %w(Zach Morgan Jake)
 		validates_numericality_of :numericality
 		validates_numericality_of :integer, only_integer: true
@@ -39,6 +40,9 @@ module Boostrap3FormBuilderSpecHelper
 
 		def presence
 		end
+
+    def presence_if
+    end
 
 		def inclusion
 		end

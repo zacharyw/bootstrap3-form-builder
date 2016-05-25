@@ -49,6 +49,10 @@ describe Bootstrap3FormBuilder::BootstrapFormHelper do
       expect(subject.text_field('presence')).to include( "required=\"required\"")
     end
 
+    it "should ignore presence validators with conditions" do
+      expect(subject.text_field('presence_if')).not_to include("required")
+    end
+
     it "should create input prefix and suffix" do
       output = subject.text_field('presence', {:input_prefix => "$", :input_suffix => ".00"})
       expect(output).to include( "class=\"form-control\"")
@@ -122,4 +126,3 @@ describe Bootstrap3FormBuilder::BootstrapFormHelper do
     end
   end
 end
-

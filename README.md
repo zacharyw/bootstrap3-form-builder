@@ -1,6 +1,6 @@
 # Bootstrap3FormBuilder
 
-*Supports Bootstrap 3* 
+*Supports Bootstrap 3*
 
 This gem adds a helper to all of your views called `bootstrap_form_for`, which generates a form for a given model object
 and fields with HTML and CSS markup that works with the [Twitter bootstrap](http://getbootstrap.com/) library.
@@ -12,7 +12,7 @@ Add to your gemfile:
 gem "bootstrap3_form_builder"
 ```
 
-After bundling the gem run 
+After bundling the gem run
 
 ```console
 rails g bootstrap3_form_builder:install
@@ -118,8 +118,8 @@ It also adds some options to all of the form helpers (`form.text_field`, `form.t
 For example:
 
 ```ruby
-<%= form.text_field :name, :label => "Nickname", :label_class => "important", 
-:help_block => "What do your friends call you?", :input_container_class => "col-sm-10", 
+<%= form.text_field :name, :label => "Nickname", :label_class => "important",
+:help_block => "What do your friends call you?", :input_container_class => "col-sm-10",
 :input_prefix => "Mrs.", :input_suffix => "The Greatest" %>
 ```
 
@@ -139,7 +139,7 @@ Would create:
 
 ##Configuration
 
-When you run the install generator it will create an initializer at 
+When you run the install generator it will create an initializer at
 
 ```console
 config/initializers/bootstrap3_form_builder.rb
@@ -147,6 +147,10 @@ config/initializers/bootstrap3_form_builder.rb
 
 Here you can customize certain aspects of the form builder. Check the generated file for the most up to date documentation
 and example options.
+
+## Testing
+
+Execute `rspec ./spec` from the root directory.
 
 
 
