@@ -53,6 +53,13 @@ Generates form fields that work with Twitter Bootstrap 3.
                 (options[:help_block] ? @template.content_tag("p", options[:help_block], :class => "help-block") : "" ) +
                 (options[:help_inline] ? @template.content_tag("span", options[:help_inline], :class => "help-inline") : "" )
 
+        if method_name == "check_box"
+          return @template.content_tag("div",
+                    @template.content_tag("label",
+                      input.html_safe),
+                        :class => "checkbox")
+        end
+
         @template.content_tag("div",
           @template.content_tag("label",
                     custom_label,
