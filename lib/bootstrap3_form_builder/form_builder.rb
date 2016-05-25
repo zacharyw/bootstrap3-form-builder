@@ -28,7 +28,7 @@ Generates form fields that work with Twitter Bootstrap 3.
         set_numericality_options(validators, options)
         set_format_options(validators, options, method_name)
 
-        if !options[:class]
+        if !options[:class] && method_name != :check_box
           options[:class] = "form-control"
         end
 
@@ -53,10 +53,10 @@ Generates form fields that work with Twitter Bootstrap 3.
                 (options[:help_block] ? @template.content_tag("p", options[:help_block], :class => "help-block") : "" ) +
                 (options[:help_inline] ? @template.content_tag("span", options[:help_inline], :class => "help-inline") : "" )
 
-        if method_name == "check_box"
+        if method_name == :check_box
           return @template.content_tag("div",
                     @template.content_tag("label",
-                      input.html_safe),
+                      input.html_safe + custom_label),
                         :class => "checkbox")
         end
 

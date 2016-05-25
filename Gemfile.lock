@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bootstrap3_form_builder (1.0.2)
+    bootstrap3_form_builder (1.0.4)
       rails
 
 GEM
